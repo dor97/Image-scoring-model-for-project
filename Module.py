@@ -1,6 +1,5 @@
 import torch.nn as nn
 from torchvision import transforms
-import torch
 
 # Define a custom fully connected network for hair density estimation
 class HairDensityModel(nn.Module):

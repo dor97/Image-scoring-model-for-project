@@ -1,16 +1,8 @@
 import torch
-import torch.nn as nn
-import torch.optim as optim
-from torchvision import datasets, transforms, models
-from torch.utils.data import DataLoader
-import time
-import copy
+from torchvision import models
 from Module import HairDensityModel
 
-import os
-import pandas as pd
 from PIL import Image
-from torch.utils.data import Dataset
 
 class trained_model:
     def __init__(self) -> None:

@@ -1,8 +1,5 @@
 from flask import Flask, request, flash, redirect
 from werkzeug.utils import secure_filename
-import os
-import requests
-import json
 from test import trained_model
 app = Flask(__name__)
 ERR_STATUS, OK_STATUS = 400, 200
