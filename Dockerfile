@@ -1,23 +1,17 @@
-FROM python:3.9
+FROM python:3.9-slim as builder
 
-# 
 WORKDIR /app
 
-# 
-COPY api.py .
 COPY requirements.txt .
 
-# 
-# 
-#RUN pip install flask==2.1.3
-#RUN pip install requests
-#RUN pip install pymongo
-RUN pip install -r requirements.txt
-
-# 
+RUN pip install --no-cache-dir -r requirements.txt
+ 
 COPY . /app 
 
 EXPOSE 8000
 
-# 
+# Default command to keep the container running
+#CMD ["tail", "-f", "/dev/null"]
+
+#CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8000", "api:app"]
 CMD ["python", "api.py"]
